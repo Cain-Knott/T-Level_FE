@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project Dashboard</title>
+    <title>Search Page</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 </head>
 <body>
     <div class="container">
@@ -15,41 +17,32 @@
             <nav>
                 <ul>
                     <li><a href="home.html" id="home-link">Home</a></li>
-                    <li><a href="search.html" id="search-link">Search</a></li>
+                    <li><a href="search.html" id="search-link" class="active">Search</a></li>
                 </ul>
             </nav>
         </aside>
         <main class="main-content">
             <header class="header">
-                <h2>About this project</h2>
-                <p>This project has no description yet</p>
-                <p>Describing the project makes it easier for other people to understand it.</p>
-            </header>
-            <section class="stats">
-                <h2>Project stats</h2>
-                <div class="stat-item">
-                    <h3>Cars</h3>
-                    <p>X cars</p>
+                <h2>Search Page</h2>
+                <p>Enter your registration plate:</p>
+                <div class="search-bar">
+                    <input type="text" id="search-input" placeholder="Enter your registration plate...">
+                    <button id="search-button"><i class="fa fa-search"></i></button>
                 </div>
-            </section>
+            </header>
         </main>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Get the current page's filename
             const currentPage = window.location.pathname.split('/').pop();
-
-            // Select the corresponding link and add 'active' class
             const links = {
                 'home.html': document.getElementById('home-link'),
                 'search.html': document.getElementById('search-link'),
             };
 
-            // Highlight the active link
             if (links[currentPage]) {
                 links[currentPage].classList.add('active');
             } else {
-                // Default to home link if no match found
                 links['home.html'].classList.add('active');
             }
         });
