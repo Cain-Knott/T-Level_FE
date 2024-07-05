@@ -148,3 +148,65 @@ body {
         margin-bottom: 10px;
         background-color: #f9f9f9;
     }
+
+.registration-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.registration-box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100px;
+}
+
+    .registration-box:hover {
+        background-color: #e0e0e0;
+    }
+
+.main-content .car-list li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+    .main-content .car-list li .plate-box {
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+        .main-content .car-list li .plate-box a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 10px;
+        }
+
+        .main-content .car-list li .plate-box:hover {
+            background-color: #ddd;
+        }
+
+/* Add styles for car info section */
+#car-info {
+    max-width: 400px;
+    margin-top: 20px;
+    margin-left: 0; /* Align with search bar */
+}
+
+    #car-info div {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+    }

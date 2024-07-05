@@ -1,10 +1,80 @@
-{
-  // This file allows you to configure ESLint according to your project's needs, so that you
-  // can control the strictness of the linter, the plugins to use, and more.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Manheim vehicle catalogue</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="home.html" id="home-link">Home</a></li>
+                    <li><a href="search.html" id="search-link">Search</a></li>
+                    <li><a href="ListOfCars.html" id="CarList-link">List of cars</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1><u id="car-header">Car: (Regplate)</u></h1>
+            </header>
+            <div id="car-info">
+                <!-- This div will be populated with car information dynamically -->
+            </div>
+        </main>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to get URL parameter by name
+            function getUrlParameter(name) {
+                name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+                var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+                var results = regex.exec(location.search);
+                return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+            };
 
-  // For more information about configuring ESLint, visit https://eslint.org/docs/user-guide/configuring/
+            // Get the regplate parameter from the URL
+            const regplate = getUrlParameter('plate');
 
-  "root": true,
-  "extends": "eslint:recommended",
-  "rules": {}
-}
+            // Update the header with the regplate
+            const carHeader = document.getElementById('car-header');
+            carHeader.innerHTML = `Car: <u>${regplate}</u>`;
+
+            // Function to populate the page with mock data
+            function populatePageWithData(regplate) {
+                const mockData = {
+                    "make": "Example",
+                    "model": "Example",
+                    "body style": "Example",
+                    "unit type": "Example",
+                    "branch name": "Example",
+                    "odometer number": "Example",
+                    "capfigures": ["Example1", "Example1"],
+                    "service history": "Example",
+                    "mot status": "Example",
+                    "mot date": "Example"
+                };
+
+                const carInfo = document.getElementById('car-info');
+                carInfo.innerHTML = '';
+
+                for (const [title, data] of Object.entries(mockData)) {
+                    const item = document.createElement('div');
+                    const dataString = Array.isArray(data) ? data.join(', ') : data;
+                    item.innerText = `${title}: ${dataString}`;
+                    carInfo.appendChild(item);
+                }
+            }
+
+            // Populate the page with data based on the regplate from URL
+            populatePageWithData(regplate);
+        });
+    </script>
+</body>
+</html>
