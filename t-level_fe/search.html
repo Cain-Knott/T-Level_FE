@@ -6,13 +6,12 @@
     <title>Search Page</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
 </head>
 <body>
     <div class="container">
         <aside class="sidebar">
             <div class="sidebar-header">
-                <h1>Manheim vehicle catalogue</h1>
+                <h1>Manheim Vehicle Catalogue</h1>
             </div>
             <nav>
                 <ul>
@@ -23,12 +22,12 @@
         </aside>
         <main class="main-content">
             <header class="header">
-                <h2>Search Page</h2>
-                <p>Enter your registration plate:</p>
+                <h1><u>Search Page:</u></h1>
                 <div class="search-bar">
                     <input type="text" id="search-input" placeholder="Enter your registration plate...">
                     <button id="search-button"><i class="fa fa-search"></i></button>
                 </div>
+                <div id="search-results" class="search-results"></div>
             </header>
         </main>
     </div>
@@ -45,7 +44,38 @@
             } else {
                 links['home.html'].classList.add('active');
             }
+
+            const searchButton = document.getElementById('search-button');
+            searchButton.addEventListener('click', function () {
+                displaySearchResults();
+            });
         });
+
+        function displaySearchResults() {
+            const searchResults = document.getElementById('search-results');
+            searchResults.innerHTML = '';
+
+            const mockData = {
+                "reg plate": "Example",
+                "make": "Example",
+                "model": "Example",
+                "body style": "Example",
+                "unit type": "Example",
+                "branch name": "Example",
+                "odometer number": "Example",
+                "capfigures": ["Example1", "Example1"],
+                "service history": "Example",
+                "mot status": "Example",
+                "mot date": "Example"
+            };
+
+            for (const [title, data] of Object.entries(mockData)) {
+                const item = document.createElement('div');
+                const dataString = Array.isArray(data) ? data.join(', ') : data;
+                item.innerText = `${title}: ${dataString}`;
+                searchResults.appendChild(item);
+            }
+        }
     </script>
 </body>
 </html>
