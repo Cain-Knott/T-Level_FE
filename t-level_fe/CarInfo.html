@@ -26,32 +26,27 @@
             </div>
             <div id="car-info-container">
                 <div id="car-info">
-                    <!-- This div will be populated with car information dynamically -->
+                    
                 </div>
             </div>
         </main>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Function to get URL parameter by name
             function getUrlParameter(name) {
                 name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
                 var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
                 var results = regex.exec(location.search);
                 return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
             };
-
-            // Get the regplate parameter from the URL
             const regplate = getUrlParameter('plate');
 
-            // Update the header with the regplate
             const carHeader = document.getElementById('car-header');
             carHeader.innerHTML = `Car: <u>${regplate}</u>`;
 
-            // Function to populate the page with mock data
             function populatePageWithData(regplate) {
                 const mockData = {
-                    "Register Plate": regplate, // Use the regplate from the URL
+                    "Register Plate": regplate, 
                     "Make": "Example",
                     "Model": "Example",
                     "Body Style": "Example",
@@ -75,7 +70,6 @@
                 }
             }
 
-            // Populate the page with data based on the regplate from URL
             populatePageWithData(regplate);
         });
     </script>

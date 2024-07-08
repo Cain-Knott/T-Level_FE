@@ -44,31 +44,32 @@ body {
     flex: 1;
 }
 
-.sidebar nav ul li {
-    margin: 10px 0;
-}
+    .sidebar nav ul li {
+        margin: 10px 0;
+    }
 
-.sidebar nav ul li a {
-    text-decoration: none;
-    color: #000;
-    display: block;
-    padding: 10px;
-    border-radius: 4px;
-}
+        .sidebar nav ul li a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+        }
 
-.sidebar nav ul li a:hover {
-    background-color: #ddd;
-}
+            .sidebar nav ul li a:hover {
+                background-color: #ddd;
+            }
 
-.sidebar nav ul li a.active {
-    background-color: #007bff;
-    color: white;
-}
+            .sidebar nav ul li a.active {
+                background-color: #007bff;
+                color: white;
+            }
 
 .main-content {
     flex: 1;
     padding: 20px;
-    overflow-y: auto; /* Ensure content is scrollable if it overflows */
+    overflow-y: auto;
+    margin-left: 30px; /* Add a left margin to align with nav list */
 }
 
 .header {
@@ -76,35 +77,30 @@ body {
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center the header */
-    flex-direction: column; /* Ensure vertical stacking */
 }
 
-.header h2 {
-    margin-top: 0;
-}
+    .header h2 {
+        margin-top: 0;
+    }
 
 #car-info-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 #car-info {
     max-width: 400px;
     margin-top: 20px;
-    margin-left: 0; /* Align with search bar */
+    margin-left: 0;
 }
 
-#car-info div {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-}
+    #car-info div {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        background-color: #f9f9f9;
+    }
 
 .registration-container {
     display: flex;
@@ -127,9 +123,9 @@ body {
     width: 100px;
 }
 
-.registration-box:hover {
-    background-color: #e0e0e0;
-}
+    .registration-box:hover {
+        background-color: #e0e0e0;
+    }
 
 .main-content .car-list li {
     list-style: none;
@@ -153,15 +149,8 @@ body {
             background-color: #ddd;
         }
 
-/* Additional CSS for better alignment */
-#car-info-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 .header {
-    text-align: center;
+    text-align: left; /* Align header text to the left */
 }
 
 #car-info {
@@ -205,7 +194,7 @@ body {
 .search-results {
     max-width: 400px;
     margin-top: 20px;
-    margin-left: 0; /* Align with search bar */
+    margin-left: 0;
 }
 
     .search-results div {
