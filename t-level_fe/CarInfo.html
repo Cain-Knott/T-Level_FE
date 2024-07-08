@@ -21,11 +21,13 @@
             </nav>
         </aside>
         <main class="main-content">
-            <header class="header">
-                <h1><u id="car-header">Car: (Regplate)</u></h1>
-            </header>
-            <div id="car-info">
-                <!-- This div will be populated with car information dynamically -->
+            <div class="header">
+                <h1><u id="car-header">Information for car: (Regplate).</u></h1>
+            </div>
+            <div id="car-info-container">
+                <div id="car-info">
+                    <!-- This div will be populated with car information dynamically -->
+                </div>
             </div>
         </main>
     </div>
@@ -49,16 +51,17 @@
             // Function to populate the page with mock data
             function populatePageWithData(regplate) {
                 const mockData = {
-                    "make": "Example",
-                    "model": "Example",
-                    "body style": "Example",
-                    "unit type": "Example",
-                    "branch name": "Example",
-                    "odometer number": "Example",
-                    "capfigures": ["Example1", "Example1"],
-                    "service history": "Example",
-                    "mot status": "Example",
-                    "mot date": "Example"
+                    "Register Plate": regplate, // Use the regplate from the URL
+                    "Make": "Example",
+                    "Model": "Example",
+                    "Body Style": "Example",
+                    "Unit Type": "Example",
+                    "Branch Name": "Example",
+                    "Odometer": "Example",
+                    "Cap Figures": ["Example1", "Example1"],
+                    "Service History": "Example",
+                    "MOT Status": "Example",
+                    "MOT Date": "Example"
                 };
 
                 const carInfo = document.getElementById('car-info');

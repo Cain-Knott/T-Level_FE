@@ -1,3 +1,4 @@
+/* CSS */
 @import url('style.css');
 
 html, body {
@@ -43,26 +44,26 @@ body {
     flex: 1;
 }
 
-    .sidebar nav ul li {
-        margin: 10px 0;
-    }
+.sidebar nav ul li {
+    margin: 10px 0;
+}
 
-        .sidebar nav ul li a {
-            text-decoration: none;
-            color: #000;
-            display: block;
-            padding: 10px;
-            border-radius: 4px;
-        }
+.sidebar nav ul li a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    padding: 10px;
+    border-radius: 4px;
+}
 
-            .sidebar nav ul li a:hover {
-                background-color: #ddd;
-            }
+.sidebar nav ul li a:hover {
+    background-color: #ddd;
+}
 
-            .sidebar nav ul li a.active {
-                background-color: #007bff;
-                color: white;
-            }
+.sidebar nav ul li a.active {
+    background-color: #007bff;
+    color: white;
+}
 
 .main-content {
     flex: 1;
@@ -75,32 +76,98 @@ body {
     padding: 20px;
     border-radius: 5px;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the header */
+    flex-direction: column; /* Ensure vertical stacking */
 }
 
-    .header h2 {
-        margin-top: 0;
-    }
+.header h2 {
+    margin-top: 0;
+}
 
-.stats {
+#car-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#car-info {
+    max-width: 400px;
+    margin-top: 20px;
+    margin-left: 0; /* Align with search bar */
+}
+
+#car-info div {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.registration-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.registration-box {
     background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100px;
 }
 
-    .stats .stat-item {
-        margin-bottom: 10px;
-    }
-
-.members {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 5px;
+.registration-box:hover {
+    background-color: #e0e0e0;
 }
 
-    .members h2 {
-        margin-top: 0;
+.main-content .car-list li {
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+    .main-content .car-list li .plate-box {
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        padding: 10px;
     }
+
+        .main-content .car-list li .plate-box a {
+            text-decoration: none;
+            color: #000;
+            display: block;
+            padding: 10px;
+        }
+
+        .main-content .car-list li .plate-box:hover {
+            background-color: #ddd;
+        }
+
+/* Additional CSS for better alignment */
+#car-info-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    text-align: center;
+}
+
+#car-info {
+    width: 100%;
+    max-width: 600px;
+}
 
 .search-bar {
     display: flex;
@@ -142,68 +209,6 @@ body {
 }
 
     .search-results div {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        margin-bottom: 10px;
-        background-color: #f9f9f9;
-    }
-
-.registration-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-}
-
-.registration-box {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 10px 20px;
-    text-align: center;
-    font-size: 18px;
-    color: #333;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 100px;
-}
-
-    .registration-box:hover {
-        background-color: #e0e0e0;
-    }
-
-.main-content .car-list li {
-    list-style: none;
-    margin-bottom: 10px;
-}
-
-    .main-content .car-list li .plate-box {
-        background-color: #f4f4f4;
-        border-radius: 5px;
-        padding: 10px;
-    }
-
-        .main-content .car-list li .plate-box a {
-            text-decoration: none;
-            color: #000;
-            display: block;
-            padding: 10px;
-        }
-
-        .main-content .car-list li .plate-box:hover {
-            background-color: #ddd;
-        }
-
-/* Add styles for car info section */
-#car-info {
-    max-width: 400px;
-    margin-top: 20px;
-    margin-left: 0; /* Align with search bar */
-}
-
-    #car-info div {
         padding: 10px;
         border: 1px solid #ccc;
         border-radius: 4px;
